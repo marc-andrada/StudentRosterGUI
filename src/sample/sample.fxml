@@ -1,0 +1,242 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TableColumn?>
+<ScrollPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+
+    <!-- Tab Pane for both Tabs -->
+    <TabPane  >
+
+        <!-- Student Roster Tab -->
+        <Tab text="Student Roster" closable="false" fx:id="RosterTab">
+            <!-- All Info (Table too) -->
+            <VBox  fx:id="StudentRosterContainer">
+
+                <!-- File Menu -->
+
+                <MenuBar>
+
+                    <Menu text="File">
+
+                        <MenuItem text="New" onAction="#newStudent"></MenuItem>
+                        <MenuItem text="Open" onAction="#openStudentFile"></MenuItem>
+                        <MenuItem text="Save" onAction="#saveStudent"></MenuItem>
+                        <MenuItem text="Save As" onAction="#saveStudentFileAs"></MenuItem>
+                        <MenuItem text="Close" onAction="#newStudent"></MenuItem>
+                        <MenuItem text="Exit" onAction="#exitProgram"></MenuItem>
+
+
+                    </Menu>
+
+                </MenuBar>
+
+                <!-- Table -->
+                <TableView fx:id="studentTable">
+
+                    <columns>
+
+                        <TableColumn fx:id="columnId" text="Student ID" onEditCommit="#editColumnID"></TableColumn>
+                        <TableColumn fx:id="columnLastName" text="Last Name" onEditCommit="#editColumnLastName"></TableColumn>
+                        <TableColumn fx:id="columnFirstName" text="First Name" onEditCommit="#editColumnFirstName"></TableColumn>
+                        <TableColumn fx:id="columnMajor" text="Major" onEditCommit="#editColumnMajor"></TableColumn>
+                        <TableColumn fx:id="columnGrade" text="Grade" onEditCommit="#editColumnGrade"></TableColumn>
+                        <TableColumn fx:id="columnGradeOptions" text="Grade Options" onEditCommit="#editColumnGradeOptions"></TableColumn>
+                        <TableColumn fx:id="columnHonorsStatus" text="Honors Status" onEditCommit="#editColumnHonorsStatus"></TableColumn>
+                        <TableColumn fx:id="columnImageFileName" text="Photo" onEditCommit="#editColumnImageFileName"></TableColumn>
+                        <TableColumn fx:id="columnStudentNotes" text="Student Notes" onEditCommit="#editColumnStudentNotes"></TableColumn>
+
+                    </columns>
+
+                </TableView>
+
+                <!-- Student Roster -->
+                <VBox fx:id="studentRoster" >
+
+                    <!-- Personal Info -->
+                    <HBox fx:id="personalInfoBox">
+
+                        <VBox fx:id="idBox">
+                            <TextField fx:id="idNum"></TextField>
+                            <Label text="Student ID" fx:id="idLabelText"></Label>
+                        </VBox>
+
+                        <VBox fx:id="lastNameBox">
+                            <TextField fx:id="lastName"></TextField>
+                            <Label fx:id="lastNameLabelText" text="Last Name"></Label>
+                        </VBox>
+
+                        <VBox fx:id="firstNameBox">
+                            <TextField fx:id="firstName"></TextField>
+                            <Label fx:id="firstNameLabelText" text="First Name"></Label>
+                        </VBox>
+
+                    </HBox>
+
+                    <!-- Course Info and Image -->
+
+                    <HBox spacing="30" alignment="CENTER">
+
+                        <!-- Course Info -->
+                        <VBox fx:id="courseInfoBox">
+                            <!-- Major -->
+                            <VBox fx:id="majorBox">
+
+                                <ComboBox fx:id="major">
+
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Biology" />
+                                            <String fx:value="Software Engineering" />
+                                            <String fx:value="Mathematics" />
+                                            <String fx:value="Art" />
+                                            <String fx:value="Underwater Basket Weaving" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                                <Label fx:id="majorLabel" text="Major"></Label>
+                            </VBox>
+                            <!-- Grade -->
+                            <HBox fx:id="gradeBox">
+
+                                <fx:define>
+                                    <ToggleGroup fx:id="grades" />
+                                </fx:define>
+
+                                <RadioButton text="A" toggleGroup="$grades" fx:id="a" />
+                                <RadioButton text="B" toggleGroup="$grades" fx:id="b" />
+                                <RadioButton text="C" toggleGroup="$grades" fx:id="c" />
+                                <RadioButton text="D" toggleGroup="$grades" fx:id="d" />
+                                <RadioButton text="F" toggleGroup="$grades" fx:id="f" />
+
+                            </HBox>
+
+                            <!-- Grade Option-->
+                            <VBox fx:id="gradeOptionBox">
+
+                                <ComboBox fx:id="gradeOptions">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Pass/Not Pass"/>
+                                            <String fx:value="Letter Grade"/>
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+
+                                <Label fx:id="gradingOptionsLabel" text="Grading Options"></Label>
+
+                            </VBox>
+
+                            <!--Honors Status-->
+                            <VBox fx:id="honorsStatusBox">
+                                <CheckBox fx:id="hsStatus"></CheckBox>
+                                <Label fx:id="honorsStatusLabel" text="Honors Status"></Label>
+                            </VBox>
+
+                        </VBox>
+
+                        <!--Choose Image-->
+
+                        <VBox fx:id="chooseImageBox">
+
+                            <Button fx:id="imageButton" text="Import Image" onAction="#importImage"></Button>
+
+                            <ImageView fx:id="studentImage"></ImageView>
+
+                        </VBox>
+                    </HBox>
+
+                    <!--Student Notes-->
+
+                    <VBox alignment="CENTER">
+
+                        <Label text="Notes" ></Label>
+                        <TextArea fx:id="studentNotes"></TextArea>
+
+                    </VBox>
+                </VBox>
+
+
+                <!-- Buttons and Logo -->
+                <VBox fx:id="buttonsAndLogo">
+
+                    <!-- Buttons -->
+                    <HBox fx:id="buttonsBox">
+
+                        <Button id="previousStudent" text="Previous Student" onAction="#previousStudent"></Button>
+
+                        <!-- New Save Delete -->
+                        <VBox fx:id="newSaveDelBox">
+
+                            <Button fx:id="newStudent" text="New Student" onAction="#newStudent"></Button>
+                            <Button fx:id="saveStudent" text="Save Student" onAction="#saveStudent"></Button>
+                            <Button fx:id="deleteStudent" text="Delete Student" onAction="#deleteStudent"></Button>
+
+                        </VBox>
+
+                        <Button fx:id="nextStudent" text="Next Student" onAction="#nextStudent"></Button>
+
+                    </HBox>
+
+                    <!-- Logo -->
+
+                    <StackPane fx:id="logoSquare" >
+
+                        <Circle fx:id="circle1" ></Circle>
+                        <Circle fx:id="circle2" ></Circle>
+                        <Circle fx:id="circle3" ></Circle>
+                        <Text fx:id="logoText" text="MA" ></Text>
+
+                    </StackPane>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- Statistics Tab -->
+        <Tab text="Statistics" closable="false">
+
+            <VBox fx:id="chartsBox">
+                <!-- Pie Chart -->
+
+                <PieChart fx:id="pieChart"></PieChart>
+
+                <!-- Bar Chart -->
+
+                <BarChart fx:id="barChart">
+                    <xAxis>
+                        <CategoryAxis fx:id="xAxis" side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="yAxis" side="LEFT"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </Tab>
+    </TabPane>
+</ScrollPane>

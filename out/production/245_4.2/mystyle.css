@@ -1,0 +1,232 @@
+.tab-pane{
+    -fx-background-color: #383838;
+}
+
+.button{
+    -fx-background-color: #B0C4DE
+}
+
+.text-field{
+    -fx-background-color: #B0C4DE
+}
+
+.combo-box{
+    -fx-background-color: #B0C4DE
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-color: #B0C4DE;
+    -fx-background-insets: 0;
+}
+
+.text-area .content{
+    -fx-background-color: #B0C4DE
+}
+
+#StudentRosterContainer{
+    -fx-spacing: 10;
+    -fx-pref-width: 888;
+    -fx-pref-height: 888;
+    -fx-alignment: CENTER;
+
+}
+
+#studentRoster{
+    -fx-alignment: CENTER;
+    -fx-spacing: 10;
+}
+
+#personalInfoBox{
+    -fx-alignment: CENTER;
+    -fx-spacing: 10;
+}
+
+#idBox{
+    -fx-spacing: 5;
+}
+
+#idLabelText{
+    -fx-text-fill: #f5ce42
+}
+
+#lastNameBox{
+    -fx-spacing: 5;
+}
+
+#lastNameLabelText{
+    -fx-text-fill: #f5ce42
+}
+
+#firstNameBox{
+    -fx-spacing: 5;
+}
+
+#firstNameLabelText{
+    -fx-text-fill: #f5ce42
+}
+
+#majorLabel{
+    -fx-text-fill: #f5ce42
+}
+
+#courseInfoBox{
+    -fx-spacing: 20
+}
+
+#majorBox{
+    -fx-spacing: 5
+}
+
+#gradeBox{
+    -fx-spacing: 10;
+}
+
+#a{
+    -fx-text-fill: #f5ce42;
+}
+
+#b{
+    -fx-text-fill: #f5ce42;
+}
+
+#c{
+    -fx-text-fill: #f5ce42;
+}
+
+#d{
+    -fx-text-fill: #f5ce42;
+}
+
+#f{
+    -fx-text-fill: #f5ce42;
+}
+
+#gradeOptionBox{
+    -fx-spacing: 5;
+}
+
+#gradingOptionsLabel{
+    -fx-text-fill: #f5ce42;
+}
+
+#honorsStatusBox{
+    -fx-spacing: 5;
+}
+
+#honorsStatusLabel{
+    -fx-text-fill: #f5ce42;
+}
+
+#chooseImageBox{
+    -fx-spacing: 10;
+    -fx-alignment: CENTER;
+}
+
+#studentImage{
+    -fx-fit-width: 200;
+    -fx-fit-height: 200;
+}
+
+#studentNotes{
+    -fx-max-width: 500;
+}
+
+#buttonsAndLogo{
+    -fx-spacing: 10;
+}
+
+#buttonsBox{
+    -fx-spacing: 75;
+    -fx-alignment: CENTER;
+}
+
+#newSaveDelBox{
+    -fx-spacing: 5;
+    -fx-alignment: CENTER;
+}
+
+#logoSquare{
+    -fx-alignment: CENTER;
+    -fx-translate-Y: -10;
+    -fx-scale-Y: 0.75;
+    -fx-scale-X: 0.75;
+}
+
+#circle1{
+    -fx-radius: 25;
+    -fx-stroke: orange;
+    -fx-stroke-width: 40;
+    -fx-fill: transparent;
+    -fx-translate-x: 5;
+    -fx-effect: dropshadow(one-pass-box, red, 12, 0, 0, 0)
+}
+
+#circle2{
+    -fx-radius: 25;
+    -fx-stroke: midnightblue;
+    -fx-fill: transparent;
+    -fx-translate-x: 2;
+    -fx-translate-y: 2.5;
+}
+
+#circle3{
+    -fx-radius: 25;
+    -fx-stroke: royalblue;
+    -fx-fill: transparent;
+}
+
+#logoText{
+    -fx-text: MA;
+    -fx-fill: royalblue;
+    -fx-textAlignment: CENTER;
+    -fx-translate-x: 5;
+}
+
+#chartsBox{
+    -fx-spacing: 20;
+}
+
+.chart-pie-label{
+    -fx-fill: white
+}
+
+.chart-pie-label-line{
+    -fx-fill: white
+}
+
+.chart-title{
+    -fx-text-fill: #f5ce42
+}
+
+.chart-bar-label{
+    -fx-fill: white
+}
+
+.axis-label{
+    -fx-text-fill: white
+}
+
+.chart-plot-background {
+    -fx-background-color: white
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: white
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: white
+}
+.chart-content{
+    -fx-text-fill: white
+}
+
+.table-view:row-selection .table-row-cell:selected .table-cell {
+    -fx-background-color: #B0C4DE
+}
+
+
+
+
+
+
+
+

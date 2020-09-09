@@ -1,0 +1,10 @@
+C:\Users\Marc\Desktop\245_4.2\roster\2_two_two.txt
+2
+two
+two
+Software Engineering
+A
+Letter Grade
+yes
+file:/C:/Users/Marc/Desktop/245_4.2/images/kid.jpg
+two 
